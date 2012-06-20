@@ -116,10 +116,47 @@ nmap N Nzz
 set encoding=utf-8
 " ファイル保存エンコーディングをUTF-8に指定する
 set fenc=utf-8
-" ファイルタイプ判定をon
-filetype plugin on
 
 " OSのクリップボードを使用する
 set clipboard+=unnamed
 " 挿入モードで<C-p>を押すとクリップボードの内容をペースト
 imap <C-p> <ESC>"*pa
+
+" -----
+" Vundleによるプラグイン管理
+" -----
+set nocompatible
+filetype off
+set rtp+=~/.vim/vimfiles/vundle.git/
+call vundle#rc()
+" Scalaコードのハイライト
+Bundle 'scala.vim'
+" 補完プラグイン
+Bundle 'neocomplcache'
+" プログラム実行
+Bundle 'quickrun.vim'
+filetype plugin indent on
+
+" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+
+" RSence
+if !exists('g:neocomplcache_omni_patterns')
+  let g:neocomplcache_omni_patterns = {}
+endif
+let g:rsenseUseOmniFunc = 1
+if filereadable(expand('~/lib/rsense-0.3/bin/rsense'))
+  let g:rsenseHome = expand('~/lib/rsense-0.3')
+  let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+endif
+
+" quickrun
+" 横分割をするようにする
+let g:quickrun_config={'*': {'split': ''}}
+
+" -----
+" FileType設定
+" -----
+augroup MyAutoCmdFileType
+  autocmd! MyAutoCmdFileType 
+  autocmd BufRead,BufNewFile *.scala set filetype=scala
