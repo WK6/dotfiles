@@ -3,7 +3,6 @@
 " -----
 " カラースキーム
 colorscheme jellybeans
-
 " 行番号表示
 set number
 " 長い文章の自動折り返しをしない(テキストなんかはこれで)
@@ -93,6 +92,9 @@ set shiftwidth=4
 nnoremap <silent> co :ContinuousNumber <C-a><CR>
 vnoremap <silent> co :ContinuousNumber <C-a><CR>
 command! -count -nargs=1 ContinuousNumber let c = col('.')|for n in range(1, <count>?<count>-line('.'):1)|exec 'normal! j' . n . <q-args>|call cursor('.', c)|endfor
+" 横分割時は下へ､ 縦分割時は右へ新しいウィンドウが開くようにする
+set splitbelow
+set splitright
 
 " -----
 " 検索に関する設定
