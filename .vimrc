@@ -2,7 +2,9 @@
 " 基本設定などなど
 " -----
 " カラースキーム
-colorscheme jellybeans
+if has('mac')
+  colorscheme jellybeans
+endif
 " 行番号表示
 set number
 " 長い文章の自動折り返しをしない(テキストなんかはこれで)
