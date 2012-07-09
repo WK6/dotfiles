@@ -162,3 +162,4 @@ let g:quickrun_config={'*': {'split': ''}}
 augroup MyAutoCmdFileType
   autocmd! MyAutoCmdFileType 
   autocmd BufRead,BufNewFile *.scala set filetype=scala
+augroup END
