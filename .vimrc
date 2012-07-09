@@ -38,10 +38,16 @@ set listchars=tab:>-
 " デフォルトvimrc_exampleのtextwidth設定上書き
 autocmd FileType text setlocal textwidth=0
 
-" スワップファイルを作成しない
-set noswapfile
-" バックアップを作成しない
-set nobackup
+" Windowsの場合、バックアップファイル・スワップファイルのディレクトリを指定
+if has('win32') || has('win64')
+  set backupdir=~/gvim/backup
+  set directory=~/gvim/swap
+" 他の環境では、バックアップファイル・スワップファイルは作成しない
+else
+  set nobackup
+  set noswapfile
+endif
+
 "ヘルプ
 nnoremap <F1> K
 " 現在開いているvimスクリプトファイルを実行
