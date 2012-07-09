@@ -137,8 +137,17 @@ imap <C-p> <ESC>"*pa
 " -----
 set nocompatible
 filetype off
-set rtp+=~/.vim/vimfiles/vundle.git/
-call vundle#rc()
+
+if has('win32') || has('win64')
+  " 相対パスにしておく(Windowsで'~'はC:\Users\になる)
+  set rtp+=./vimfiles/vundle.git/
+  " プラグインはvimfiles/bundle/以下で管理
+  call vundle#rc('./vimfiles/bundle/')
+else
+  set rtp+=~/.vim/vimfiles/vundle.git/
+  call vundle#rc()
+endif
+
 " Scalaコードのハイライト
 Bundle 'scala.vim'
 " 補完プラグイン
