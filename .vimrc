@@ -130,7 +130,7 @@ set fenc=utf-8
 " OSのクリップボードを使用する
 set clipboard+=unnamed
 " 挿入モードで<C-p>を押すとクリップボードの内容をペースト
-imap <C-p> <ESC>"*pa
+" imap <C-p> <ESC>"*pa
 
 " -----
 " Vundleによるプラグイン管理
