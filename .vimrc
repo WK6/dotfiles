@@ -154,6 +154,23 @@ Bundle 'scala.vim'
 Bundle 'Shougo/neocomplcache'
 " プログラム実行
 Bundle 'thinca/vim-quickrun'
+" テキスト括弧etc補完
+Bundle 'surround.vim'
+" Vimからack検索
+Bundle 'mileszs/ack.vim'
+" Ruby/Perlの正規表現検索
+Bundle 'othree/eregex.vim'
+" 行先頭に連番挿入
+Bundle 'catn.vim'
+" コメント挿入プラグイン
+Bundle 'scrooloose/nerdcommenter'
+" <C-a><C-n>で月、曜日などをインクリメント/デクリメント(monday.vimの改変版)
+Bundle 'nishigori/vim-sunday'
+" sudo実行(macのみに適用)
+if has('mac')
+    Bundle 'sudo.vim'
+endif
+
 filetype plugin indent on
 
 " neocomplcache
@@ -175,6 +192,21 @@ endif
 " quickrun
 " 横分割をするようにする
 let g:quickrun_config={'*': {'split': ''}}
+
+" surround
+" 'g':「」でくくる
+let g:surround_103 = "「\r」"
+
+" eregex
+" キー変更
+nnoremap / :M/
+nnoremap ? :M?
+nnoremap ,/ /
+nnoremap ,? ?
+
+" nerdcommenter
+" コメント後のスペース数
+let NERDSpaceDelims = 1
 
 " -----
 " FileType設定
