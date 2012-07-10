@@ -160,13 +160,16 @@ filetype plugin indent on
 let g:neocomplcache_enable_at_startup = 1
 
 " RSence
-if !exists('g:neocomplcache_omni_patterns')
-  let g:neocomplcache_omni_patterns = {}
-endif
-let g:rsenseUseOmniFunc = 1
-if filereadable(expand('~/lib/rsense-0.3/bin/rsense'))
-  let g:rsenseHome = expand('~/lib/rsense-0.3')
-  let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+" Windowsだとうまく動かせないので現状Macだけにしておく
+if has('mac')
+  if !exists('g:neocomplcache_omni_patterns')
+    let g:neocomplcache_omni_patterns = {}
+  endif
+  let g:rsenseUseOmniFunc = 1
+  if filereadable(expand('~/lib/rsense-0.3/bin/rsense'))
+    let g:rsenseHome = expand('~/lib/rsense-0.3')
+    let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+  endif
 endif
 
 " quickrun
