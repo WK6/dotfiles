@@ -148,8 +148,8 @@ else
   call vundle#rc()
 endif
 
-" Scalaコードのハイライト
-Bundle 'scala.vim'
+" Scalaコードの設定etc
+Bundle 'rosstimson/scala-vim-support'
 " 補完プラグイン
 Bundle 'Shougo/neocomplcache'
 " プログラム実行
