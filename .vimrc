@@ -151,9 +151,9 @@ endif
 " Scalaコードのハイライト
 Bundle 'scala.vim'
 " 補完プラグイン
-Bundle 'neocomplcache'
+Bundle 'Shougo/neocomplcache'
 " プログラム実行
-Bundle 'quickrun.vim'
+Bundle 'thinca/vim-quickrun'
 filetype plugin indent on
 
 " neocomplcache
