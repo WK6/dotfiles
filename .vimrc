@@ -21,6 +21,7 @@ set notitle
 " 現在のモードを表示
 set showmode
 " カーソルを行頭、行末で止まらないようにする
+set nocompatible
 set whichwrap=b,s,h,l,<,>,[,]
 " 常にステータス行を表示
 set laststatus=2
@@ -135,7 +136,6 @@ set clipboard+=unnamed
 " -----
 " Vundleによるプラグイン管理
 " -----
-set nocompatible
 filetype off
 
 if has('win32') || has('win64')
