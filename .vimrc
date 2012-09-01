@@ -57,8 +57,18 @@ nnoremap <F8> :source %<CR>
 nnoremap ZZ <Nop>
 
 " 全角スペースをハイライト表示させる
-highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
-match ZenkakuSpace /\%u3000/
+" ひとまずWindowsとMac他で別設定にしておく
+if has('win32') || has('win64')
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme * highlight ZenkakuSpace term=underline ctermbg=Red guibg=Red
+    " %u3000は全角スペースの文字コード
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /\%u3000/
+  augroup END
+else
+  highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
+  match ZenkakuSpace /\%u3000/
+endif
 
 " ステータスラインに文字コードやBOM、16進表示等表示
 " iconvが使用可能の場合、カーソル上の文字コードをエンコードに応じた表示にするFencB()を使用
