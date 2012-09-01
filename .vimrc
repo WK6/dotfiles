@@ -179,6 +179,10 @@ filetype plugin indent on
 
 " neocomplcache
 let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_dictionary_filetype_lists = {
+  \ 'default' : '',
+  \ 'scala' : $HOME . '/.vim/dict/scala.dict',
+  \ }
 
 " RSence
 " Windowsだとうまく動かせないので現状Macだけにしておく
