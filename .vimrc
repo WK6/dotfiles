@@ -152,6 +152,10 @@ endif
 Bundle 'rosstimson/scala-vim-support'
 " 補完プラグイン
 Bundle 'Shougo/neocomplcache'
+
+Bundle 'Shougo/vimproc'
+Bundle 'Shougo/vimshell'
+
 " プログラム実行
 Bundle 'thinca/vim-quickrun'
 " テキスト括弧etc補完
