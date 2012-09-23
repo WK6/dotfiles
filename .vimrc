@@ -180,6 +180,9 @@ Bundle 'catn.vim'
 Bundle 'scrooloose/nerdcommenter'
 " <C-a><C-n>で月、曜日などをインクリメント/デクリメント(monday.vimの改変版)
 Bundle 'nishigori/vim-sunday'
+" Haxe用プラグイン
+Bundle 'jdonaldson/vaxe'
+
 " sudo実行(macのみに適用)
 if has('mac')
     Bundle 'sudo.vim'
