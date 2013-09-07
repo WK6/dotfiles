@@ -180,6 +180,12 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'nishigori/vim-sunday'
 " Haxe用プラグイン
 Bundle 'jdonaldson/vaxe'
+" ファイル検索プラグイン
+Bundle 'ctrlp.vim'
+" ステータスライン色づけ
+Bundle 'itchyny/lightline.vim'
+" 統合UI
+Bundle 'Shougo/unite.vim'
 
 " sudo実行(macのみに適用)
 if has('mac')
