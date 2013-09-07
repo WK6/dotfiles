@@ -172,8 +172,6 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'surround.vim'
 " Vimからack検索
 Bundle 'mileszs/ack.vim'
-" Ruby/Perlの正規表現検索
-Bundle 'othree/eregex.vim'
 " 行先頭に連番挿入
 Bundle 'catn.vim'
 " コメント挿入プラグイン
@@ -217,13 +215,6 @@ let g:quickrun_config={'*': {'split': ''}}
 " surround
 " 'g':「」でくくる
 let g:surround_103 = "「\r」"
-
-" eregex
-" キー変更
-nnoremap / :M/
-nnoremap ? :M?
-nnoremap ,/ /
-nnoremap ,? ?
 
 " nerdcommenter
 " コメント後のスペース数
