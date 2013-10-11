@@ -161,7 +161,8 @@ endif
 " Scalaコードの設定etc
 Bundle 'rosstimson/scala-vim-support'
 " 補完プラグイン
-Bundle 'Shougo/neocomplcache'
+"Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplete'
 
 Bundle 'Shougo/vimproc'
 Bundle 'Shougo/vimshell'
@@ -195,8 +196,8 @@ endif
 filetype plugin indent on
 
 " neocomplcache
-let g:neocomplcache_enable_at_startup = 1
-let g:neocomplcache_dictionary_filetype_lists = {
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#dictionary_filetype_lists = {
   \ 'default' : '',
   \ 'scala' : $HOME . '/.vim/dict/scala.dict',
   \ }
@@ -204,13 +205,13 @@ let g:neocomplcache_dictionary_filetype_lists = {
 " RSence
 " Windowsだとうまく動かせないので現状Macだけにしておく
 "if has('mac')
-"  if !exists('g:neocomplcache_omni_patterns')
-"    let g:neocomplcache_omni_patterns = {}
+"  if !exists('g:neocomplete#omni_patterns')
+"    let g:neocomplete#omni_patterns = {}
 "  endif
 "  let g:rsenseUseOmniFunc = 1
 "  if filereadable(expand('~/lib/rsense-0.3/bin/rsense'))
 "    let g:rsenseHome = expand('~/lib/rsense-0.3')
-"    let g:neocomplcache_omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+"    let g:neocomplete#omni_patterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 "  endif
 "endif
 
