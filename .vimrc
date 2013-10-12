@@ -149,48 +149,48 @@ set clipboard+=unnamed
 filetype off
 
 if has('win32') || has('win64')
-  " 相対パスにしておく(Windowsで'~'はC:\Users\になる)
-  set rtp+=./vimfiles/vundle.git/
-  " プラグインはvimfiles/bundle/以下で管理
-  call vundle#rc('./vimfiles/bundle/')
+  " TODO windows対応
+  "" 相対パスにしておく(Windowsで'~'はC:\Users\になる)
+  "set rtp+=./vimfiles/vundle.git/
+  "" プラグインはvimfiles/bundle/以下で管理
+  "call vundle#rc('./vimfiles/bundle/')
 else
-  set rtp+=~/.vim/vimfiles/vundle.git/
-  call vundle#rc()
+  set rtp+=~/.vim/bundle/neobundle.vim/
+  call neobundle#rc(expand('~/.vim/vim_plugins/'))
 endif
 
 " Scalaコードの設定etc
-Bundle 'rosstimson/scala-vim-support'
+NeoBundle 'rosstimson/scala-vim-support'
 " 補完プラグイン
-"Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplete'
+NeoBundle 'Shougo/neocomplete'
 
-Bundle 'Shougo/vimproc'
-Bundle 'Shougo/vimshell'
+NeoBundle 'Shougo/vimproc'
+NeoBundle 'Shougo/vimshell'
 
 " プログラム実行
-Bundle 'thinca/vim-quickrun'
+NeoBundle 'thinca/vim-quickrun'
 " テキスト括弧etc補完
-Bundle 'surround.vim'
+NeoBundle 'surround.vim'
 " Vimからack検索
-Bundle 'mileszs/ack.vim'
+NeoBundle 'mileszs/ack.vim'
 " 行先頭に連番挿入
-Bundle 'catn.vim'
+NeoBundle 'catn.vim'
 " コメント挿入プラグイン
-Bundle 'scrooloose/nerdcommenter'
+NeoBundle 'scrooloose/nerdcommenter'
 " <C-a><C-n>で月、曜日などをインクリメント/デクリメント(monday.vimの改変版)
-Bundle 'nishigori/vim-sunday'
+NeoBundle 'nishigori/vim-sunday'
 " Haxe用プラグイン
-Bundle 'jdonaldson/vaxe'
+NeoBundle 'jdonaldson/vaxe'
 " ファイル検索プラグイン
-Bundle 'ctrlp.vim'
+NeoBundle 'ctrlp.vim'
 " ステータスライン色づけ
-Bundle 'itchyny/lightline.vim'
+NeoBundle 'itchyny/lightline.vim'
 " 統合UI
-Bundle 'Shougo/unite.vim'
+NeoBundle 'Shougo/unite.vim'
 
 " sudo実行(macのみに適用)
 if has('mac')
-    Bundle 'sudo.vim'
+    NeoBundle 'sudo.vim'
 endif
 
 filetype plugin indent on
