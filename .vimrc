@@ -39,6 +39,9 @@ set listchars=tab:>-
 " デフォルトvimrc_exampleのtextwidth設定上書き
 autocmd FileType text setlocal textwidth=0
 
+" ','置き換え
+let mapleader = ","
+
 " Windowsの場合、バックアップファイル・スワップファイルのディレクトリを指定
 if has('win32') || has('win64')
   set backupdir=~/gvim/backup
@@ -187,6 +190,8 @@ NeoBundle 'ctrlp.vim'
 NeoBundle 'itchyny/lightline.vim'
 " 統合UI
 NeoBundle 'Shougo/unite.vim'
+" 一括置換ハイライト
+NeoBundle 'osyo-manga/vim-over'
 
 " sudo実行(macのみに適用)
 if has('mac')
@@ -226,6 +231,14 @@ let g:surround_103 = "「\r」"
 " nerdcommenter
 " コメント後のスペース数
 let NERDSpaceDelims = 1
+
+" overvim
+" over.vimの起動 ,m
+nnoremap <silent> <Leader>m :OverCommandLine<CR>
+" カーソル下の単語をハイライト付きで置換
+nnoremap sub :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+" コピーした文字列をハイライト付きで置換
+nnoremap subp y:OverCommandLine<CR>%s!<C-r>=substitute(@0, '!', '\\!', 'g')<CR>!!gI<Left><Left><Left>
 
 " -----
 " FileType設定
