@@ -132,6 +132,8 @@ nmap <Esc><Esc> :nohlsearch<CR>
 " 検索後、その行を中央に表示
 nmap n nzz
 nmap N Nzz
+" タブ新規作成
+nmap tn :tabnew<CR>
  
 " -----
 " エンコード設定
