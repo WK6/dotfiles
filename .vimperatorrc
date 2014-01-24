@@ -1,0 +1,23 @@
+"------
+" keymap config
+"------
+"yで選択範囲をコピー
+map y :echo 'Yank!'<CR>Y
+
+"j/kの移動量を5倍に
+map j 5<C-e>
+map k 5<C-y>
+
+"<A-Left>/<A-Right>かh/lでタブ移動
+map <A-Left> <C-p>
+map <A-Right> <C-n>
+map h <C-p>
+map l <C-n>
+
+"ロケーションバーにフォーカス
+map <C-l> <A-d>
+
+"ビープ音抑止
+set visualbell
+"ビジュアルベルを無効化
+highlight Bell display:none

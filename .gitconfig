@@ -1,0 +1,33 @@
+[user]
+	name = WK6
+	email = monochrome8bit262@gmail.com
+[color]
+	ui = auto
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	df = diff
+	brl = branch --list
+	ca = commit -a
+	cm = commit --amend
+	cam = commit -a --amend
+	purge = reset --hard HEAD^
+[core]
+	excludesfile = /Users/WK6/.gitignore_global
+	autocrlf = input
+    #editor = vim
+    editor = env LANG=ja_JP.UTF-8 /Applications/MacVim.app/Contents/MacOS/Vim
+[pager]
+	log = diff-highlight | less
+	show = diff-highlight | less
+	diff = diff-highlight | less
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[gui]
+	encoding = utf-8
