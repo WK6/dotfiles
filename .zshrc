@@ -41,10 +41,9 @@ precmd() {
 }
 PROMPT=$'%6F%n@%m%f %3F%~%f%1F%1v%f %# '
 
-# rvm settings
-if [[ -s $HOME/.rvm/scripts/rvm ]] then
-    source $HOME/.rvm/scripts/rvm
-fi
+# rbenv setting
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
 
 # cabal PATH setting
 PATH=$HOME/.cabal/bin:$PATH
